@@ -1,0 +1,50 @@
+.slideout-menu {
+    width: 50vw;
+    left: -50vw;
+    z-index: 1001;
+    background-color: $white;
+
+    &.active {
+        left: 0 $i;
+    }
+
+    .drawer-menu--close {
+        position: absolute;
+        top: 20px;
+        left: 20px;
+        cursor: pointer;
+    }
+
+    &__link {
+        a {
+            text-decoration: none;
+        }
+
+        &--big {
+            line-height: 90px;
+            text-align: center;
+
+            [data-image-reveal] {
+                position: relative;
+                
+                img {
+                    display: none;
+                    position: absolute;
+                    height: 57px;
+                    width: auto;
+                    left: -50px;
+                    top: 15px;
+
+                    &.reveal {
+                        display: block;
+                    }
+                }
+            }
+        }
+
+        &--small {
+            text-transform: uppercase;
+            line-height: 30px;
+        }
+    }
+}

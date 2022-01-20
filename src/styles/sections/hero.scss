@@ -1,0 +1,71 @@
+@import '../helpers/_helpers';
+
+.hero {
+    position: relative;
+
+    &__image {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    &__content {
+        position: absolute;
+        height: 400px;
+        top: calc(50% - 200px);
+        left: 5%;
+
+        @include mq($medium, 'max') {
+            height: 320px;
+            margin-top: 100px;
+        }
+
+        @include mq($small, 'max') {
+            height: 270px;
+            width: 100%;
+            top: 100%; 
+            left: 0;
+            margin: 0;
+            text-align: center;
+            justify-content: flex-end;
+        }
+
+        &-heading {
+            line-height: 113px;
+
+            @include mq($medium, 'max') {
+                font-size: 70px;
+                line-height: 75px;
+            }
+
+            @include mq($small, 'max') {
+                font-size: 60px;
+                line-height: 60px;
+                position: absolute;
+                text-align: center;
+                width: 100%;
+                top: -20px;
+            }
+        }
+
+        &-subheading {
+            line-height: 25px;
+        }
+
+        &-info {
+            text-transform: uppercase;
+        }
+
+        &-btn {
+            @include mq($small, 'max') {
+                margin: 0 auto;
+            }
+        }
+
+        @include mq($medium, 'max') {
+            &-info, &-subheading, &-btn {
+                margin-bottom: 20px;
+            }
+        }
+    }
+}

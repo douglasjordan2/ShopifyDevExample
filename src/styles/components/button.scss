@@ -1,0 +1,27 @@
+.btn {
+    width: 290px;
+    height: 39px;
+    border-radius: 3px;
+    outline: none;
+    border: none;
+    font-weight: bold;
+    cursor: pointer;
+
+    &--primary {
+        color: $black;
+        background-color: $white;
+
+        &.btn-border {
+            border: 2px solid black;
+        }
+    }
+
+    &--secondary {
+        color: $white;
+        background-color: $black;
+
+        &.btn-border {
+            border: 2px solid white;
+        }
+    }
+}

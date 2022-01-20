@@ -1,0 +1,103 @@
+{{ 'section.header.css' | asset_url | stylesheet_tag }}
+
+<header>
+    {% render 'slideout-menu', 
+        big_menu: section.settings.big_menu,
+        small_menu: section.settings.small_menu,
+        menu_style: section.settings.menu_style
+    %}
+
+    <ul class="main-nav container flex f-jb f-ac p-m text-xxs font-secondary white">
+        <li class="main-nav__item drawer-menu--open flex f-jc f-ac {% if section.settings.menu_style == 'circle' %}circle{% endif %}">
+            {{ section.settings.menu_title }}
+        </li>
+
+        <li class="main-nav__item">
+            <h1>
+                <a href="/">
+                    <img src="{{ settings.logo | img_url: '400x' }}" />
+                </a>
+            </h1>
+        </li>
+            
+        <li class="main-nav__item">
+            {% if shop.customer_accounts_enabled %}
+                {% if customer %}
+                    <a href="/account">account</a>
+                        {{ 'log out'  | customer_logout_link }}
+                    {% else %}
+                        {{ 'log in ' | customer_login_link }}
+                        {{ 'register' | customer_register_link }}
+                {% endif %}
+            {% endif %}
+
+            <p class="side-cart--toggle">
+                {% render 'icon-cart' %}
+            </p>
+        </li>
+    </ul>
+
+    {% render 'side-cart', empty_cart_text: section.settings.empty_cart_text %}
+</header>
+
+{% schema %}
+    { 
+        "name": "Header",
+        "presets": [
+            {
+                "name": "Header"
+            }
+        ],
+        "settings": [ 
+            {
+                "type": "link_list",
+                "id": "big_menu",
+                "label": "Big Text Menu"
+            },
+            {
+                "type": "link_list",
+                "id": "small_menu",
+                "label": "Small Text Menu"
+            },
+            {
+                "type": "text",
+                "id": "menu_title",
+                "label": "Menu Title"
+            },
+            {
+                "type": "radio",
+                "id": "menu_style",
+                "label": "Menu Style",
+                "default": "circle",
+                "options": [
+                    {
+                        "value": "circle",
+                        "label": "Circle"
+                    },
+                    {
+                        "value": "plain",
+                        "label": "Plain"
+                    }
+                ]
+            },
+            {
+                "type": "image_picker",
+                "id": "logo",
+                "label": "Site Logo"
+            },
+            {
+                "type": "range",
+                "id": "logo_width",
+                "label": "Logo Width",
+                "min": 50,
+                "max": 150,
+                "default": 81
+            },
+            {
+                "type": "text",
+                "id": "empty_cart_text",
+                "label": "Empty cart text."
+            }
+        ]
+    }
+{% endschema %}

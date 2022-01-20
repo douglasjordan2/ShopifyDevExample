@@ -1,0 +1,31 @@
+@import '../helpers/_helpers';
+@import '../components/drawer';
+@import '../snippets/side-cart';
+@import '../snippets/slideout-menu';
+
+header {
+    width: 100vw;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+
+    .main-nav {
+        &__item {
+            cursor: pointer;
+        }
+    }
+
+    .drawer-menu--open, .drawer-menu--close {
+        &.circle {
+            height: 48px;
+            width: 48px;
+            border-radius: 50%;
+            border: 1.5px solid $white;
+
+            &--black {
+                border: 1.5px solid $black;
+            }
+        }
+    }
+}

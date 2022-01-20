@@ -1,0 +1,19 @@
+<div class="cart-item flex f-jb f-ac" data-cart-item="{{ item.id }}">
+    <div class="flex">
+        <img class="cart-item__image m-r-m" src="{{ item.image | img_url: '150x' }}" />
+
+        <div class="flex f-col f-jc">
+            <h5 class="cart-item__title text-md">{{ item.title }}</h5>
+            <p class="cart-item__info text-sm">{{ item.properties.info }}</p>
+            <div class="cart-item__quantity flex text-sm">
+                <button class="cart-item__quantity-btn" data-minus>-</button>
+                <div class="cart-item__quantity-increment flex f-jc f-ac font-secondary" id="quantity">
+                    {{ item.quantity }}
+                </div>
+                <button class="cart-item__quantity-btn" data-plus>+</button>
+            </div>
+        </div>
+    </div>
+
+    <span class="cart-item--remove" data-remove="{{ item.id }}">&times;</span>
+</div>

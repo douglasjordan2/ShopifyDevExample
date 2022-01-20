@@ -1,0 +1,35 @@
+<div class="side-cart drawer drawer--right flex f-col f-jb f-ac black" data-side-cart data-drawer='{
+    "open": ".side-cart--toggle",
+    "close": ".side-cart--close"
+}'>
+    <div class="side-cart__header flex f-jb m-t-xl m-b-xl">
+        <div class="one-third empty-spacer"></div>
+        <img src="{{ settings.logo_secondary | img_url: '400x' }}" />
+        <div class="one-third side-cart--close flex f-jc f-ac">
+            {% render 'icon-arrow' %}
+        </div>
+    </div>
+
+    <div class="full three-quarters-vert p-l">
+        <div class="empty-cart-text full-vert flex f-ac {% if cart.items.size > 0 %}visually-hidden{% endif %}">
+            <h4 class="text-lg font-primary">{{ empty_cart_text }}</h4>
+        </div>
+
+        <div class="side-cart__items">
+            {% if cart.items.size > 0 %}
+                {% for line_item in cart.items %}
+                    {% render 'cart-item', item: line_item %}
+                {% endfor %}
+            {% endif %}
+        </div>
+
+        <div class="side-cart__subtotal flex f-jb p-t-s font-secondary {% unless cart.items.size > 0 %}visually-hidden{% endunless %}">
+            <span class="text-xs">Subtotal</span>
+            <span class="text-sm bold subtotal-text">{{ cart.items_subtotal_price | money }}</span>
+        </div>
+    </div>
+
+    <a href="/checkout">
+        <button class="checkout-btn m-b-xxl btn btn-border btn{%- if cart.items.size < 1 -%}--primary{%- else -%}--secondary{%- endif -%}"></button>
+    </a>
+</div>

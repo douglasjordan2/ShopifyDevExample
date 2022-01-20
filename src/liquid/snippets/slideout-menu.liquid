@@ -1,0 +1,40 @@
+<div class="slideout-menu drawer drawer--left flex f-col f-jc f-ac" data-drawer='{
+    "open": ".drawer-menu--open",
+    "close": ".drawer-menu--close"
+}'>
+    <div class="drawer-menu--close flex f-jc f-ac flex f-jc f-ac text-xxs {% if menu_style == 'circle' %}circle circle--black{% endif %}">
+        Close
+    </div>
+
+    <ul class="flex f-col f-jc f-ac m-b-xl">
+        {% assign menu = linklists[big_menu] %}
+        {% for link in menu.links %}
+            {% assign handle = link.title | handleize %}
+            {% assign product = all_products[handle] %}
+            <li class="slideout-menu__link slideout-menu__link--big text-xl font-primary">
+                <a class="black" href="javascript:void(0)" data-image-reveal="#image-reveal--{{ forloop.index }}" data-atc='{
+                    "type": "single",
+                    "product": {{ product.selected_or_first_available_variant.id }},
+                    "image": "{{ product.featured_image | img_url: '150x' }}",
+                    "title": "{{ product.title }}",
+                    "info": "{{ product.metafields.global.short_description }}"
+                }'>
+                    {{ link.title }}
+
+                    <img id="image-reveal--{{ forloop.index }}" src="{{ product.featured_image | img_url: '150x' }}" />
+                </a>
+            </li>
+        {% endfor %}
+    </ul>
+
+    <ul class="flex f-col f-jc f-ac">
+        {% assign menu = linklists[small_menu] %}
+        {% for link in menu.links %}
+            {% assign handle = link.title | handleize %}
+            {% assign product = all_products[handle] %}
+            <li class="slideout-menu__link slideout-menu__link--small text-sm font-secondary">
+                <a class="black" href="{{ link.url }}">{{ link.title }}</a>
+            </li>
+        {% endfor %}
+    </ul>
+</div>

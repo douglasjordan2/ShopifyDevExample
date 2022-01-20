@@ -1,0 +1,35 @@
+.cart-item {
+    height: 80px;
+    margin-bottom: 20px;
+
+    &__title {
+        margin-bottom: 5px;
+    }
+
+    &__image {
+        width: 38px;
+        height: auto;
+        object-fit: contain;
+    }
+
+    &--remove {
+        font-size: 33px;
+        cursor: pointer;
+    }
+
+    &__quantity {
+        margin-top: 10px; 
+
+        &-btn {
+            background-color: transparent;
+            border: none;
+            outline: none;
+            cursor: pointer;
+            width: 15px;
+        }
+
+        &-increment {
+            margin: 0 5px;
+        }
+    }
+}

@@ -1,0 +1,25 @@
+.drawer {
+    height: 100vh;
+    position: fixed;
+    top: 0;
+
+    &--right {
+        transition: right .3s linear;
+
+        @include mq($small, 'max') {
+            right: -100vw $i;
+        }
+    }
+
+    &--left {
+        transition: left .3s linear;
+
+        @include mq($small, 'max') {
+            left: -100vw $i;
+        }
+    }
+
+    @include mq($small, 'max') {
+        width: 100vw $i;
+    }
+}

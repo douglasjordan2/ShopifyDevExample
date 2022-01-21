@@ -14,7 +14,12 @@ class CartItem {
 
     init() {
         this.attachListeners()
-        this.mutationObserver()
+        
+        const mutation = new _MutationObserver(this.elem, () => {
+            this.value = parseInt(this.updateElem.innerHTML)
+        }, true)
+
+        mutation.observe()
     }
 
     attachListeners() {
@@ -63,11 +68,6 @@ class CartItem {
         } catch(err) {
             console.error(err)
         }
-    }
-
-    mutationObserver() {
-        const mutation = new _MutationObserver(this.elem, () => this.value = parseInt(this.updateElem.innerHTML))
-        mutation.observe()
     }
 }
 

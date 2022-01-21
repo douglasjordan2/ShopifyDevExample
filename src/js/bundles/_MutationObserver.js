@@ -1,6 +1,7 @@
 class _MutationObserver {
-    constructor(observeElem, cb, options) {
+    constructor(observeElem, cb, disconnect, options) {
         this.observeElem = observeElem
+        this.disconnect = disconnect || false
         this.cb = cb
         this.options = options || {
             subtree: true,
@@ -11,7 +12,13 @@ class _MutationObserver {
     }
 
     observe() {
-        const observer = new this.MutationObserver(this.cb)
+        const observer = new this.MutationObserver(() => {
+            this.cb()
+            if(this.disconnect) {
+                observer.disconnect()
+            }
+        })
+
         observer.observe(this.observeElem, this.options)
     }
 }

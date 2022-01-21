@@ -35,24 +35,6 @@ class SideCart {
         mutation.observe()
     }
 
-    async mutation() {
-        const cartItems = this.elem.querySelectorAll('.cart-item')
-
-        if(cartItems.length) {
-            this.subtotalBlock.classList.remove('visually-hidden')
-            this.emptyText.classList.add('visually-hidden')
-            this.checkoutBtn.classList.remove('btn--primary')
-            this.checkoutBtn.classList.add('btn--secondary')
-
-            this.delayUpdate()
-        } else {
-            this.subtotalBlock.classList.add('visually-hidden')
-            this.emptyText.classList.remove('visually-hidden')
-            this.checkoutBtn.classList.add('btn--primary')
-            this.checkoutBtn.classList.remove('btn--secondary')
-        }
-    }
-
     delayUpdate () {
         clearTimeout(this.idleTimer)
         this.idleTimer = setTimeout(() => this.updateSubtotalText(), 500)

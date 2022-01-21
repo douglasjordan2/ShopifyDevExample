@@ -16,7 +16,7 @@
   \****************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n// extracted by mini-css-extract-plugin\n//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiLi9zcmMvc3R5bGVzL3RlbXBsYXRlcy9hcHBzLnNjc3MuanMiLCJtYXBwaW5ncyI6IjtBQUFBIiwic291cmNlcyI6WyJ3ZWJwYWNrOi8vc2hvcGlmeS13ZWJwYWNrLXRoZW1lLWRldmVsb3BtZW50Ly4vc3JjL3N0eWxlcy90ZW1wbGF0ZXMvYXBwcy5zY3NzP2I2YzYiXSwic291cmNlc0NvbnRlbnQiOlsiLy8gZXh0cmFjdGVkIGJ5IG1pbmktY3NzLWV4dHJhY3QtcGx1Z2luXG5leHBvcnQge307Il0sIm5hbWVzIjpbXSwic291cmNlUm9vdCI6IiJ9\n//# sourceURL=webpack-internal:///./src/styles/templates/apps.scss\n");
+eval("__webpack_require__.r(__webpack_exports__);\n// extracted by mini-css-extract-plugin\n//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiLi9zcmMvc3R5bGVzL3RlbXBsYXRlcy9hcHBzLnNjc3MuanMiLCJtYXBwaW5ncyI6IjtBQUFBIiwic291cmNlcyI6WyJ3ZWJwYWNrOi8vc2hvcGlmeS1kZXYtZXhhbXBsZS8uL3NyYy9zdHlsZXMvdGVtcGxhdGVzL2FwcHMuc2Nzcz9iNmM2Il0sInNvdXJjZXNDb250ZW50IjpbIi8vIGV4dHJhY3RlZCBieSBtaW5pLWNzcy1leHRyYWN0LXBsdWdpblxuZXhwb3J0IHt9OyJdLCJuYW1lcyI6W10sInNvdXJjZVJvb3QiOiIifQ==\n//# sourceURL=webpack-internal:///./src/styles/templates/apps.scss\n");
 
 /***/ }),
 
@@ -26,7 +26,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n// extracted by mini-css-extr
   \******************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var Styles_templates_apps_scss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! Styles/templates/apps.scss */ \"./src/styles/templates/apps.scss\");\n\n\n// JavaScript that will run on app pages that do not use Liquid templates//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiLi9zcmMvanMvYnVuZGxlcy90ZW1wbGF0ZXMvYXBwcy5qcy5qcyIsIm1hcHBpbmdzIjoiOztBQUFBO0FBQ0E7QUFDQSIsInNvdXJjZXMiOlsid2VicGFjazovL3Nob3BpZnktd2VicGFjay10aGVtZS1kZXZlbG9wbWVudC8uL3NyYy9qcy9idW5kbGVzL3RlbXBsYXRlcy9hcHBzLmpzPzBlZWIiXSwic291cmNlc0NvbnRlbnQiOlsiaW1wb3J0IFwiU3R5bGVzL3RlbXBsYXRlcy9hcHBzLnNjc3NcIjtcblxuLy8gSmF2YVNjcmlwdCB0aGF0IHdpbGwgcnVuIG9uIGFwcCBwYWdlcyB0aGF0IGRvIG5vdCB1c2UgTGlxdWlkIHRlbXBsYXRlcyJdLCJuYW1lcyI6W10sInNvdXJjZVJvb3QiOiIifQ==\n//# sourceURL=webpack-internal:///./src/js/bundles/templates/apps.js\n");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var Styles_templates_apps_scss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! Styles/templates/apps.scss */ \"./src/styles/templates/apps.scss\");\n\n\n// JavaScript that will run on app pages that do not use Liquid templates//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiLi9zcmMvanMvYnVuZGxlcy90ZW1wbGF0ZXMvYXBwcy5qcy5qcyIsIm1hcHBpbmdzIjoiOztBQUFBO0FBQ0E7QUFDQSIsInNvdXJjZXMiOlsid2VicGFjazovL3Nob3BpZnktZGV2LWV4YW1wbGUvLi9zcmMvanMvYnVuZGxlcy90ZW1wbGF0ZXMvYXBwcy5qcz8wZWViIl0sInNvdXJjZXNDb250ZW50IjpbImltcG9ydCBcIlN0eWxlcy90ZW1wbGF0ZXMvYXBwcy5zY3NzXCI7XG5cbi8vIEphdmFTY3JpcHQgdGhhdCB3aWxsIHJ1biBvbiBhcHAgcGFnZXMgdGhhdCBkbyBub3QgdXNlIExpcXVpZCB0ZW1wbGF0ZXMiXSwibmFtZXMiOltdLCJzb3VyY2VSb290IjoiIn0=\n//# sourceURL=webpack-internal:///./src/js/bundles/templates/apps.js\n");
 
 /***/ })
 

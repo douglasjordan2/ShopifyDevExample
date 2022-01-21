@@ -7,13 +7,12 @@ import ImageReveal from '../components/ImageReveal';
 
 import ComponentConstructor from "../ComponentConstructor";
 
-const components = [
-    { selector: 'drawer', class: Drawer },
-    { selector: 'atc', class: AddToCart },
-    { selector: 'cart-item', class: CartItem },
-    { selector: 'side-cart', class: SideCart },
-    { selector: 'image-reveal', class: ImageReveal }
-]
+const components = {
+    'drawer': Drawer,
+    'atc': AddToCart,
+    'cart-item': CartItem,
+    'side-cart': SideCart,
+    'image-reveal': ImageReveal
+}
 
-const Constructor = new ComponentConstructor(components)
-Constructor.init()
+ComponentConstructor(components)

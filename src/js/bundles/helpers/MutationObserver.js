@@ -13,8 +13,8 @@ class MutationObserver {
     }
 
     init() {
-        this.observer = new this.MutationObserver(async () => {
-            await this.cb()
+        this.observer = new this.MutationObserver(() => {
+            this.cb()
 
             if(this.disconnect) {
                 this.stop()

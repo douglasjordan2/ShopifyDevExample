@@ -38,9 +38,13 @@ class SideCart {
     }
 
     async updateSubtotalText() {
-        const res = await axios.get('/cart.js')
-        const subtotal = (res.data.items_subtotal_price / 100).toFixed(2)
-        this.subtotal.innerHTML = '$' + subtotal
+        try {
+            const res = await axios.get('/cart.js')
+            const subtotal = (res.data.items_subtotal_price / 100).toFixed(2)
+            this.subtotal.innerHTML = '$' + subtotal
+        } catch(error) {
+            console.error(error)
+        }
     }
 }
 

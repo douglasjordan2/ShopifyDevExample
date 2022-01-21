@@ -17,7 +17,7 @@ class CartItem {
         
         new MutationObserver(this.elem, () => {
             this.value = parseInt(this.updateElem.innerHTML)
-        }, true)
+        })
     }
 
     attachListeners() {

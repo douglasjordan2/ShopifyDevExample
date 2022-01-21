@@ -5,7 +5,8 @@
   "private": true,
   "main": "webpack.config.js",
   "scripts": {
-    "start": "NODE_ENV=development webpack --watch",
+    "dev": "NODE_ENV=development webpack --watch",
+    "prod": "NODE_ENV=production webpack",
     "build": "webpack",
     "deploy": "webpack && theme deploy",
     "add-all": "git add ."

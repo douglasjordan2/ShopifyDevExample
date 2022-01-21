@@ -30,6 +30,6 @@
     </div>
 
     <a href="/checkout">
-        <button class="checkout-btn m-b-xxl btn btn-border btn{%- if cart.items.size < 1 -%}--primary{%- else -%}--secondary{%- endif -%}"></button>
+        <button class="checkout-btn m-b-xxl btn btn-border btn{%- if cart.items.size < 1 -%}--primary{%- else -%}--secondary{%- endif -%}" {% if cart.items.size < 1 %}disabled{% endif %}></button>
     </a>
 </div>

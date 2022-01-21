@@ -5,7 +5,7 @@ import CartItem from "../components/CartItem";
 import SideCart from '../components/SideCart';
 import ImageReveal from '../components/ImageReveal';
 
-import ComponentConstructor from "../ComponentConstructor";
+import ComponentConstructor from "../helpers/ComponentConstructor";
 
 const components = {
     'drawer': Drawer,

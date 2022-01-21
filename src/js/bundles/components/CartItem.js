@@ -1,5 +1,6 @@
 import axios from 'axios'
-import _MutationObserver from '../_MutationObserver'
+import _MutationObserver from '../helpers/MutationObserver'
+import IdleTimer from '../helpers/IdleTimer'
 
 class CartItem {
     constructor(elem, selector) {
@@ -9,17 +10,14 @@ class CartItem {
         this.updateElem = elem.querySelector('#quantity')
         this.value = parseInt(this.updateElem.innerHTML)
         this.container = elem.parentElement
-        this.idleTimer = null
     }
 
     init() {
         this.attachListeners()
         
-        const mutation = new _MutationObserver(this.elem, () => {
+        _MutationObserver(this.elem, () => {
             this.value = parseInt(this.updateElem.innerHTML)
         }, true)
-
-        mutation.observe()
     }
 
     attachListeners() {
@@ -45,26 +43,23 @@ class CartItem {
         }
 
         this.updateElem.innerHTML = this.value
-        this.delayUpdate(this.id, this.value)
+        new IdleTimer(() => this.updateCart(this.id, this.value))
     }
 
     remove() {
-        this.delayUpdate(this.id, 0)
+        new IdleTimer(() => this.updateCart(this.id, 0))
         this.container.removeChild(this.elem)
-    }
-
-    delayUpdate (id, qty) {
-        clearTimeout(this.idleTimer)
-        this.idleTimer = setTimeout(() => this.updateCart(id, qty), 500)
     }
 
     async updateCart(id, qty) {
         try {
-            await axios.post('/cart/update.js', {
+            const res = await axios.post('/cart/update.js', {
                 updates: {
                     [id]: qty
                 }
             })
+
+            console.log(res)
         } catch(err) {
             console.error(err)
         }

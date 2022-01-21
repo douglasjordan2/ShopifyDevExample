@@ -1,6 +1,52 @@
 {
-  "current": "Default",
-  "presets": {
-    "Default": { }
+    "current": {
+      "logo": "shopify:\/\/shop_images\/logo.png",
+      "logo_secondary": "shopify:\/\/shop_images\/logo_secondary.png",
+      "sections": {
+        "header": {
+          "type": "header",
+          "settings": {
+            "big_menu": "main-menu",
+            "small_menu": "main-menu-1",
+            "menu_title": "Menu",
+            "menu_style": "circle",
+            "logo": "shopify:\/\/shop_images\/logo.png",
+            "logo_width": 81,
+            "empty_cart_text": "Your cart is thirsty."
+          }
+        },
+        "hero": {
+          "type": "hero",
+          "settings": {
+          }
+        },
+        "1642552387401387bc": {
+          "type": "hero",
+          "settings": {
+            "desktop_image": "shopify:\/\/shop_images\/img.png",
+            "desktop_focal_point": "right bottom",
+            "mobile_image": "shopify:\/\/shop_images\/image_1.png",
+            "mobile_focal_point": "right bottom",
+            "heading": "Bliss up for <br> i|Bliss|tober",
+            "subheading": "For a limited time, bundle <br> your bliss and save.",
+            "info": "(1x High Rhode, 1x Dream Light, and a 20-Pack of Kin Spritz.",
+            "btn_text": "$149 (5% off)",
+            "product1": "high-rhode",
+            "product1_qty": 1,
+            "product2": "dream-light",
+            "product2_qty": 1,
+            "product3": "kin-spritz",
+            "product3_qty": 20,
+            "mobile_bg": "linear-gradient(180deg, #685A8F 0%, #9178B5 61.78%)"
+          }
+        }
+      },
+      "content_for_index": [
+        "1642552387401387bc"
+      ]
+    },
+    "presets": {
+      "Default": {
+      }
+    }
   }
-}

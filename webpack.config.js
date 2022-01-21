@@ -99,7 +99,7 @@ if (mode === 'development') {
   module.exports.plugins.push(
     new WebpackShellPluginNext({
       onBuildStart:{
-        scripts: ['echo Webpack build in progress...🛠'],
+        scripts: ['echo Development - Webpack build in progress...🛠'],
       }, 
       onBuildEnd:{
         scripts: ['echo Build Complete 📦','theme watch','theme open'],
@@ -107,4 +107,18 @@ if (mode === 'development') {
       }
     })
   )
+}
+
+if (mode === 'production') {
+    module.exports.plugins.push(
+        new WebpackShellPluginNext({
+            onBuildStart:{
+                scripts: ['echo Production - Webpack build in progress...🛠'],
+            }, 
+            onBuildEnd:{
+                scripts: ['echo Build Complete 📦','theme deploy --env=production --allow-live'],
+                parallel: true
+            }
+        })
+    )
 }

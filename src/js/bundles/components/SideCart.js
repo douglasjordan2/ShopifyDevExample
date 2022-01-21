@@ -1,12 +1,11 @@
 import axios from "axios"
-import _MutationObserver from "../helpers/MutationObserver"
 import IdleTimer from "../helpers/IdleTimer"
+import MutationObserver from "../helpers/MutationObserver"
 
 class SideCart {
     constructor(elem) {
         this.elem = elem
 
-        this.itemsContainer = elem.querySelector('.side-cart__items')
         this.emptyText = elem.querySelector('.empty-cart-text')
         this.checkoutBtn = elem.querySelector('.checkout-btn')
         this.subtotalBlock = elem.querySelector('.side-cart__subtotal')
@@ -14,7 +13,7 @@ class SideCart {
     }
 
     init() {
-        _MutationObserver(this.elem, () => {
+        this.mutation = new MutationObserver(this.elem, () => {
             const cartItems = this.elem.querySelectorAll('.cart-item')
     
             if(cartItems.length) {
@@ -27,11 +26,14 @@ class SideCart {
                 new IdleTimer(() => this.updateSubtotalText())
             } else {
                 this.subtotalBlock.classList.add('visually-hidden')
+                this.subtotal.innerHTML = '$0.00'
                 this.emptyText.classList.remove('visually-hidden')
                 this.checkoutBtn.classList.add('btn--primary')
                 this.checkoutBtn.classList.remove('btn--secondary')
                 this.checkoutBtn.disabled = true
             }
+
+            this.mutation.reload()
         })
     }
 

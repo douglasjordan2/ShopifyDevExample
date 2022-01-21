@@ -4,8 +4,7 @@ function ComponentConstructor(components) {
         const matchedElements = document.querySelectorAll('[' + dataSelect + ']')
 
         matchedElements.forEach(element => {
-            const component = new Component(element, dataSelect)
-            component.init()
+            new Component(element, dataSelect).init()
         })
     })
 }

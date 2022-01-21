@@ -15,8 +15,6 @@
                 <a class="black" href="javascript:void(0)" data-image-reveal="#image-reveal--{{ forloop.index }}" data-atc='{
                     "type": "single",
                     "product": {{ product.selected_or_first_available_variant.id }},
-                    "image": "{{ product.featured_image | img_url: '150x' }}",
-                    "title": "{{ product.title }}",
                     "info": "{{ product.metafields.global.short_description }}"
                 }'>
                     {{ link.title }}

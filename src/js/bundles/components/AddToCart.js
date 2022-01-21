@@ -34,24 +34,28 @@ class AddToCart {
     }
 
     async updateCart(postData) {
-        const res = await axios.post('/cart/add.js', postData)
+        try {
+            const res = await axios.post('/cart/add.js', postData)
 
-        const items = res.data.items
-        items.forEach(item => {
-            const matchingElem = this.cart.querySelector('[data-cart-item="' + item.id + '"]')
-            if(matchingElem) {
-                matchingElem.querySelector('#quantity').innerHTML = item.quantity
-            } else {
-                this.buildCartItem(item)
-            }
-        })
-        
-        if(!this.cart.classList.contains('active')) {
-            this.cart.classList.add('active')
+            const items = res.data.items
+            items.forEach(item => {
+                const matchingElem = this.cart.querySelector('[data-cart-item="' + item.id + '"]')
+                if(matchingElem) {
+                    matchingElem.querySelector('#quantity').innerHTML = item.quantity
+                } else {
+                    this.buildCartItem(item)
+                }
+            })
+            
+            if(!this.cart.classList.contains('active')) {
+                this.cart.classList.add('active')
 
-            if(window.innerWidth < 1000) {
-                document.querySelector('.drawer-menu--close').click()
+                if(window.innerWidth < 1000) {
+                    document.querySelector('.drawer-menu--close').click()
+                }
             }
+        } catch (error) {
+            console.error(error)
         }
     }
 

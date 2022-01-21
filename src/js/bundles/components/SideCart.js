@@ -1,4 +1,5 @@
 import axios from "axios"
+import _MutationObserver from "../_MutationObserver"
 
 class SideCart {
     constructor(elem) {
@@ -13,16 +14,15 @@ class SideCart {
     }
 
     init() {
-        const MutationObserver = window.MutationObserver || window.WebKitMutationObserver
-        const observer = new MutationObserver(async () => {
+        const mutation = new _MutationObserver(this.elem, () => {
             const cartItems = this.elem.querySelectorAll('.cart-item')
-
+    
             if(cartItems.length) {
                 this.subtotalBlock.classList.remove('visually-hidden')
                 this.emptyText.classList.add('visually-hidden')
                 this.checkoutBtn.classList.remove('btn--primary')
                 this.checkoutBtn.classList.add('btn--secondary')
-
+    
                 this.delayUpdate()
             } else {
                 this.subtotalBlock.classList.add('visually-hidden')
@@ -31,11 +31,26 @@ class SideCart {
                 this.checkoutBtn.classList.remove('btn--secondary')
             }
         })
+        
+        mutation.observe()
+    }
 
-        observer.observe(this.elem, {
-            subtree: true,
-            childList: true
-        })
+    async mutation() {
+        const cartItems = this.elem.querySelectorAll('.cart-item')
+
+        if(cartItems.length) {
+            this.subtotalBlock.classList.remove('visually-hidden')
+            this.emptyText.classList.add('visually-hidden')
+            this.checkoutBtn.classList.remove('btn--primary')
+            this.checkoutBtn.classList.add('btn--secondary')
+
+            this.delayUpdate()
+        } else {
+            this.subtotalBlock.classList.add('visually-hidden')
+            this.emptyText.classList.remove('visually-hidden')
+            this.checkoutBtn.classList.add('btn--primary')
+            this.checkoutBtn.classList.remove('btn--secondary')
+        }
     }
 
     delayUpdate () {

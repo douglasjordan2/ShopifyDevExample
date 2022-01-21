@@ -1,7 +1,7 @@
 import "Styles/templates/index.scss";
 import Drawer from '../components/Drawer';
 import AddToCart from "../components/AddToCart";
-import CartItem from "../components/CartItem";
+import CartItem from "../components/CartItem"; 
 import SideCart from '../components/SideCart';
 import ImageReveal from '../components/ImageReveal';
 

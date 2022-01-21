@@ -1,4 +1,5 @@
 import axios from 'axios'
+import _MutationObserver from '../_MutationObserver'
 
 class CartItem {
     constructor(elem, selector) {
@@ -53,23 +54,20 @@ class CartItem {
     }
 
     async updateCart(id, qty) {
-        await axios.post('/cart/update.js', {
-            updates: {
-                [id]: qty
-            }
-        })
+        try {
+            await axios.post('/cart/update.js', {
+                updates: {
+                    [id]: qty
+                }
+            })
+        } catch(err) {
+            console.error(err)
+        }
     }
 
     mutationObserver() {
-        const MutationObserver = window.MutationObserver || window.WebKitMutationObserver
-        const observer = new MutationObserver(() => {
-            this.value = parseInt(this.updateElem.innerHTML)
-        })
-
-        observer.observe(this.elem, {
-            subtree: true,
-            childList: true
-        })
+        const mutation = new _MutationObserver(this.elem, () => this.value = parseInt(this.updateElem.innerHTML))
+        mutation.observe()
     }
 }
 

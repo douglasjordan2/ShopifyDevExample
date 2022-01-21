@@ -65,7 +65,7 @@ class AddToCart {
                     <p class="cart-item__info text-sm">${item.properties.info}</p>
                     <div class="cart-item__quantity flex text-sm">
                         <button class="cart-item__quantity-btn" data-minus>-</button>
-                        <div class="cart-item__quantity-increment flex f-ac" id="quantity">
+                        <div class="cart-item__quantity-increment flex f-ac font-secondary" id="quantity">
                             ${item.quantity}
                         </div>
                         <button class="cart-item__quantity-btn" data-plus>+</button>
